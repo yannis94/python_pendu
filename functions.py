@@ -1,4 +1,5 @@
 import donnees
+import pickle
 from random import randrange
 
 random_index = randrange(len(donnees.word))
@@ -16,6 +17,18 @@ def player(pseudo):
     #     donnees.player_profil["pseudo"] = pseudo
     #     donnees.player_profil["vie"] = 8
     #     game(random_word, donnees.player_profil[vie])
+    with open("donnees.py", "ab") as mon_fichier:
+        mmm = 8
+        donnee = pickle.Pickler(mon_fichier)
+        test = donnee.dump(mmm)
+    # for index in donnees.player_profil:
+    #     if donnees.player_profil["pseudo"] = pseudo:
+    #         game(random_word, donnees.player_profil[vie])
+    #         break
+    #     else: 
+    #         my_file = open("donnees.py", "r")
+    #         my_file.
+
 
 
 def create_mask(word_rand):
