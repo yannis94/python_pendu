@@ -8,7 +8,7 @@ word = {}
 word_mask = {}
 
 def player(pseudo):
-            #chercher / écrire info fichier score
+            #chercher / écrire info fichier score_player
 
     # if donnees.player_profil[pseudo]:
     #     game(random_word, donnees.player_profil[vie])
