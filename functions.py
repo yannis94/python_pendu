@@ -11,12 +11,26 @@ def word_random(filepath):
     nbr = random.randint(0, len(words_array)-1)
     return words_array[nbr]
 
-def show_word(dict, array, input):
-    
+def show_word(dict, array, input, point):
+    good_choice = False
     for i in dict:
         if input == dict[i]:
             array[i] = True
+            good_choice = True
         else:
             continue
     
-    return array
+    if good_choice is False:
+        point -= 1
+    elif good_choice is True:
+        point = point
+    
+    return array, point
+
+def is_complet(array):
+    for bol in array:
+        if bol:
+            continue
+        else:
+            return False
+    return True

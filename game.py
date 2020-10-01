@@ -1,35 +1,38 @@
 import functions
 
 """
-recup word
-dictionnaire letter - bol
-    if true -> show_lettre
-    else show *
-input user letter
-    check if letter and not try
+! ToDo
+    - test user's input (if not letter etc... / regex ?)
+    - gameplay ++ (try again, score board etc...)
 """
-
+#start round / set variable
+life = 3
 word = functions.word_random("words.txt")
 word_dic = {}
 word_mask = []
+completed = False
 
 for i in range(len(word)):
     letter = word[i]
     word_dic[i] = letter
     word_mask.append(False)
 
-print(word)
-print(word_dic)
-print(word_mask)
+#try player
+while life > 0 and completed is False:
+    word_result = ""
+    print("life : " + str(life))
 
-input_j = input("enter letter : ")
-input_result = functions.show_word(word_dic, word_mask, input_j)
+    input_j = input("enter letter : ")
+    input_test, life = functions.show_word(word_dic, word_mask, input_j, life)
 
-test = ""
-for j in range(len(input_result)):
-    if input_result[j] is True:
-        test += word_dic[j]
-    else:
-        test += "*"
+    for j in range(len(input_test)):
+        if input_test[j] is True:
+            word_result += word_dic[j]
+        else:
+            word_result += "*"
+            completed = False
 
-print(test)
+    print(word_result)
+    completed = functions.is_complet(word_mask)
+
+print("End")
