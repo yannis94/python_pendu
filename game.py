@@ -30,7 +30,6 @@ while life > 0 and completed is False:
             word_result += word_dic[j]
         else:
             word_result += "*"
-            completed = False
 
     print(word_result)
     completed = functions.is_complet(word_mask)
