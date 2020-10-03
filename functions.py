@@ -34,3 +34,13 @@ def is_complet(array):
         else:
             return False
     return True
+
+def regex(string):
+    string = string.lower()
+    letters = "abcdefghijklmnopqrstuvwxyz"
+    if len(string) > 1:
+        return False
+    elif len(string) == 1 and string in letters:
+        return True
+    else:
+        return False

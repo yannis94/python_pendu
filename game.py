@@ -23,6 +23,15 @@ while life > 0 and completed is False:
     print("life : " + str(life))
 
     input_j = input("enter letter : ")
+    test = functions.regex(input_j)
+
+   
+    while test is False:
+        print("Invalid try, you have to enter one and only a letter.")
+        input_j = input("enter letter : ")
+        test = functions.regex(input_j)    
+    
+
     input_test, life = functions.show_word(word_dic, word_mask, input_j, life)
 
     for j in range(len(input_test)):
