@@ -1,11 +1,5 @@
 import functions
 
-"""
-! ToDo
-    - test user's input (if not letter etc... / regex ?)
-    - gameplay ++ (try again, score board etc...)
-"""
-#start round / set variable
 def round(pseudo):
 
     def user_input(bol, answer):
