@@ -29,16 +29,7 @@ def round(pseudo):
 
         round_try = input("enter letter : ")
         test = functions.regex(round_try)
-
         input_j = user_input(test, round_try)
-
-        """
-        while test is False:
-            print("Invalid, you have to enter only one letter.")
-            input_j = input("enter letter : ")
-            test = functions.regex(input_j)    
-        """
-
         input_test, life = functions.show_word(word_dic, word_mask, input_j, life)
 
         for j in range(len(input_test)):
@@ -63,7 +54,22 @@ def round(pseudo):
         round(pseudo)
     else:
         return
-    
-round("yaya")
+
+
+#Début du jeu
+
+print("""
+--------- HANGMAN ---------
+          ________
+          |/      |
+          |      ( )
+          |      /|\\
+          |      / \\
+        __|____
+---------------------------
+
+""")
+player = input("Your pseudo : ")
+round(player)
 
 print("End, thanks for playing")
